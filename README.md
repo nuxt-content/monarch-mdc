@@ -172,7 +172,7 @@ const editor = monaco.editor.create(el, {
 
 ### Bracket Matching
 
-If you'd like to highlight matching opening and closing brackets for MDC block components, you can register the bracket matcher. This will highlight both brackets when the cursor is adjacent to either one.
+If you'd like to highlight matching opening and closing MDC block component tags, you can register the bracket matcher. This will highlight the opening `::component-name` and closing `::` when the cursor is adjacent to either one.
 
 ```js
 import * as monaco from 'monaco-editor'
