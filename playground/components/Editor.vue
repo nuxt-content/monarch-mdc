@@ -6,12 +6,13 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch } from 'vue'
+import { ref, onMounted, onBeforeUnmount, watch } from 'vue'
 import loader from '@monaco-editor/loader'
 import {
   language as mdc,
   formatter as mdcFormatter,
   foldingProvider as mdcFoldingProvider,
+  registerBracketMatcher,
 } from '../../src/index'
 
 const props = defineProps({
@@ -32,6 +33,7 @@ const props = defineProps({
 const emit = defineEmits(['update:code'])
 const editorContainer = ref(null)
 let editor = null
+let bracketMatcherDisposable = null
 
 onMounted(async () => {
   const monaco = await loader.init()
@@ -114,6 +116,16 @@ onMounted(async () => {
   editor.onDidChangeModelContent(() => {
     emit('update:code', editor.getValue())
   })
+
+  // Initialize bracket matcher for MDC block components
+  bracketMatcherDisposable = registerBracketMatcher(editor)
+})
+
+onBeforeUnmount(() => {
+  if (bracketMatcherDisposable) {
+    bracketMatcherDisposable.dispose()
+    bracketMatcherDisposable = null
+  }
 })
 
 watch(() => props.code, (newCode) => {
