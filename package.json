@@ -21,14 +21,14 @@
   "devDependencies": {
     "@nuxt/eslint-config": "^1.8.0",
     "@release-it/conventional-changelog": "^10.0.1",
-    "@vitest/ui": "^3.2.4",
+    "@vitest/ui": "^4.0.18",
     "eslint": "^9.32.0",
     "execa": "^9.6.0",
     "mdclint": "^0.0.2",
     "monaco-editor-core": "^0.52.2",
     "release-it": "^19.0.4",
     "unbuild": "^3.6.0",
-    "vitest": "^3.2.4"
+    "vitest": "^4.0.18"
   },
   "packageManager": "pnpm@10.14.0"
 }
