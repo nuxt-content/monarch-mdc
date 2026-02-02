@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@monaco-editor/loader": "^1.5.0",
-    "@nuxt/ui": "3.3.0",
+    "@nuxt/ui": "4.4.0",
     "nuxt": "^4.0.3",
     "vue": "latest",
     "vue-router": "latest"
