@@ -42,7 +42,7 @@ describe(`MDC Formatter`, async () => {
         .filter(line => !line.includes('Lists should be surrounded by blank lines'))
 
         // npm warnings, unrelated, e.g. 'npm warn config optional Use `--omit=optional` to exclude optional dependencies...'
-        .filter(line => !line.includes('npm warn config'))
+        .filter(line => !line.includes('npm warn '))
 
         .join('\n')
 
