@@ -170,9 +170,51 @@ const editor = monaco.editor.create(el, {
 })
 ```
 
+### Bracket Matching
+
+If you'd like to highlight matching opening and closing MDC block component tags, you can register the bracket matcher. This will highlight the opening `::component-name` and closing `::` when the cursor is adjacent to either one.
+
+```js
+import * as monaco from 'monaco-editor'
+import { language as markdownLanguage, registerBracketMatcher } from '@nuxtlabs/monarch-mdc'
+
+// Register language
+monaco.languages.register({ id: 'mdc' })
+monaco.languages.setMonarchTokensProvider('mdc', markdownLanguage)
+
+const code = `
+::component
+Your **awesome** markdown
+::
+`
+
+// Create monaco model
+const model = monaco.editor.createModel(
+  code,
+  'mdc'
+)
+
+// Create your editor
+const el = ... // DOM element
+const editor = monaco.editor.create(el, {
+  model,
+  // Monaco Editor options
+  // see: https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.istandaloneeditorconstructionoptions.html
+})
+
+// Register bracket matcher (with optional configuration)
+const bracketMatcherDisposable = registerBracketMatcher(editor, {
+  injectStyles: true, // Auto-inject default styles (default: true)
+  maxLineCount: 5000, // Disable for large documents (default: 5000, set to 0 to disable limit)
+})
+
+// Clean up when disposing the editor
+// bracketMatcherDisposable.dispose()
+```
+
 ## VS Code Extension
 
-The exported `formatter` and `getDocumentFoldingRanges` functions are also utilized in [@nuxtlabs/vscode-mdc](https://github.com/nuxtlabs/vscode-mdc) to provide the functionality to the [MDC VS Code extension](https://marketplace.visualstudio.com/items?itemName=Nuxt.mdc).
+The exported `formatter`, `getDocumentFoldingRanges`, and `findMatchingBrackets` functions are also utilized in [@nuxtlabs/vscode-mdc](https://github.com/nuxtlabs/vscode-mdc) to provide the functionality to the [MDC VS Code extension](https://marketplace.visualstudio.com/items?itemName=Nuxt.mdc).
 
 ## 💻 Development
 
