@@ -1,5 +1,32 @@
 # Changelog
 
+## [0.9.0](https://github.com/nuxt-content/monarch-mdc/compare/v0.8.1...v0.9.0) (2026-02-04)
+
+### Features
+
+* mdc block component tag matching and highlighting ([#27](https://github.com/nuxt-content/monarch-mdc/issues/27)) ([ec7123e](https://github.com/nuxt-content/monarch-mdc/commit/ec7123ee5d74695ae65974af0889e9f0a35c0855))
+
+## v0.9.0
+
+[compare changes](https://github.com/nuxt-content/monarch-mdc/compare/v0.8.1...v0.9.0)
+
+### 🚀 Enhancements
+
+- Mdc block component tag matching and highlighting ([#27](https://github.com/nuxt-content/monarch-mdc/pull/27))
+
+### 🏡 Chore
+
+- Upgrade deps ([ac1ecd0](https://github.com/nuxt-content/monarch-mdc/commit/ac1ecd0))
+
+### ✅ Tests
+
+- Ignore npm warnings ([4d6803c](https://github.com/nuxt-content/monarch-mdc/commit/4d6803c))
+
+### ❤️ Contributors
+
+- Farnabaz <farnabaz@gmail.com>
+- Adam DeHaven ([@adamdehaven](https://github.com/adamdehaven))
+
 ## [0.8.1](https://github.com/nuxtlabs/monarch-mdc/compare/v0.8.0...v0.8.1) (2025-08-08)
 
 ### Bug Fixes
