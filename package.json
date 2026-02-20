@@ -22,7 +22,7 @@
     "@nuxt/eslint-config": "^1.13.0",
     "@release-it/conventional-changelog": "^10.0.4",
     "@vitest/ui": "^4.0.18",
-    "eslint": "^9.39.2",
+    "eslint": "^10.0.1",
     "execa": "^9.6.1",
     "mdclint": "^0.1.2",
     "monaco-editor-core": "^0.55.1",
