@@ -19,10 +19,10 @@
     "verify": "pnpm build && pnpm lint && pnpm test"
   },
   "devDependencies": {
-    "@nuxt/eslint-config": "^1.13.0",
-    "@release-it/conventional-changelog": "^10.0.4",
+    "@nuxt/eslint-config": "^1.15.1",
+    "@release-it/conventional-changelog": "^10.0.5",
     "@vitest/ui": "^4.0.18",
-    "eslint": "^9.39.2",
+    "eslint": "^9.39.3",
     "execa": "^9.6.1",
     "mdclint": "^0.1.2",
     "monaco-editor-core": "^0.55.1",
@@ -30,5 +30,5 @@
     "unbuild": "^3.6.1",
     "vitest": "^4.0.18"
   },
-  "packageManager": "pnpm@10.28.2"
+  "packageManager": "pnpm@10.30.1"
 }
