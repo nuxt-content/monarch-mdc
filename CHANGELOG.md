@@ -1,5 +1,28 @@
 # Changelog
 
+## [0.10.0](https://github.com/nuxtlabs/monarch-mdc/compare/v0.9.0...v0.10.0) (2026-07-30)
+
+### Features
+
+* highlight json-render codeblocks ([#37](https://github.com/nuxtlabs/monarch-mdc/issues/37)) ([26b67d1](https://github.com/nuxtlabs/monarch-mdc/commit/26b67d1f8d1818f67541e5d63a3a4d14bacec1e2))
+
+## v0.10.0
+
+[compare changes](https://github.com/nuxtlabs/monarch-mdc/compare/v0.9.0...v0.10.0)
+
+### 🚀 Enhancements
+
+- Highlight json-render codeblocks ([#37](https://github.com/nuxtlabs/monarch-mdc/pull/37))
+
+### 🏡 Chore
+
+- Upgrade deps ([#38](https://github.com/nuxtlabs/monarch-mdc/pull/38))
+- Upgrade node and pnpm version ([#39](https://github.com/nuxtlabs/monarch-mdc/pull/39))
+
+### ❤️ Contributors
+
+- Farnabaz <farnabaz@gmail.com>
+
 ## [0.9.0](https://github.com/nuxt-content/monarch-mdc/compare/v0.8.1...v0.9.0) (2026-02-04)
 
 ### Features
