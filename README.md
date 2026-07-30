@@ -52,6 +52,11 @@ const editor = monaco.editor.create(el, {
 })
 ```
 
+Fenced code blocks use Monaco's embedded highlighting for the language id (e.g. ` ```ts `, ` ```json `). Blocks with a `-render` suffix (e.g. ` ```json-render `, ` ```yaml-render `) highlight as the base language (`json`, `yaml`).
+
+> [!Note]
+> Some languages only finish loading when first used as a model language. `json` is one of these (worker-backed), so embedding alone may not color ` ```json ` / ` ```json-render ` until you prime it, e.g. `monaco.editor.createModel('', 'json').dispose()`. Basic languages like `ts` / `yaml` usually load on demand via `nextEmbedded` without that step. See [Editor.vue](./playground/components/Editor.vue) for an example.
+
 ### Formatter
 
 If you'd like to integrate MDC formatting into your Monaco Editor instance, you can also register the document format provider. The initial setup looks similar, but we'll also register a set of formatting providers and some additional editor instance config options.

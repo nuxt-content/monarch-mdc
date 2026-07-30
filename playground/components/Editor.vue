@@ -38,6 +38,12 @@ let bracketMatcherDisposable = null
 onMounted(async () => {
   const monaco = await loader.init()
 
+  // Force-load json language to allow highlighting `json-render`
+  // unlike ts and yaml, json is full language service and need to be registered
+  for (const lang of ['json']) {
+    monaco.editor.createModel('', lang).dispose()
+  }
+
   // Register the MDC language
   monaco.languages.register({ id: 'mdc' })
   monaco.languages.setMonarchTokensProvider('mdc', mdc)
