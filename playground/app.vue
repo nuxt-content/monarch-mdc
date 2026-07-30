@@ -27,6 +27,29 @@ class B {
 }
 \`\`\`
 
+\`\`\`json
+{
+  "title": "Hello",
+  "count": 3,
+  "nested": { "ok": true }
+}
+\`\`\`
+
+\`\`\`json-render
+{
+  "title": "Hello",
+  "count": 3,
+  "nested": { "ok": true }
+}
+\`\`\`
+
+\`\`\`yaml-render
+title: Hello
+count: 3
+nested:
+  ok: true
+\`\`\`
+
 \`\`\`ts meta data
 const a = true
 class B {
@@ -35,7 +58,7 @@ class B {
 \`\`\`
 
 
-\`\`\`ts [help] 
+\`\`\`ts [help]
 const ts = "help"
 const a = 3
 class B {
@@ -100,7 +123,7 @@ inline :block{with="attributes"}
 ::block{with="attributes"}
 ---
 key: value
-key2: 
+key2:
   - value
   - another value
 ---
