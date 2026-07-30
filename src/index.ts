@@ -94,7 +94,6 @@ export const language = <languages.IMonarchLanguage>{
       [/^\s*```\s*$/, { token: '', next: '@codeblock' }],
 
       // MDC style code blocks with -render suffix (e.g. json-render{...} → json)
-      // eslint-disable-next-line regexp/no-super-linear-backtracking
       [/^\s*```\s*([\w/\-#]+)-render(\s*(\{[^}]*\}))?(\s*(\[[^\]]*\]))?(\s*(\{[^}]*\}))?.*$/, { token: '', next: '@codeblockmdc', nextEmbedded: '$1' }],
 
       // MDC style code blocks (with backticks and language in brackets)
