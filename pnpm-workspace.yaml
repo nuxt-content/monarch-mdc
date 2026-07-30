@@ -1,8 +1,12 @@
 packages:
   - ./
   - playground
-onlyBuiltDependencies:
-  - '@tailwindcss/oxide'
-  - esbuild
-  - unrs-resolver
-  - vue-demi
+shamefullyHoist: true
+strictPeerDependencies: false
+# Avoid reinstalls mid-test when scripts/npx run under pnpm 11
+verifyDepsBeforeRun: false
+allowBuilds:
+  "@tailwindcss/oxide": true
+  esbuild: true
+  unrs-resolver: true
+  vue-demi: true

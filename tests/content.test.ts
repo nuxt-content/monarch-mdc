@@ -1,16 +1,19 @@
-import { readdir, readFile, writeFile, mkdir, rmdir } from 'node:fs/promises'
+import { readdir, readFile, writeFile, mkdir, rm } from 'node:fs/promises'
 import { join } from 'node:path'
 import { describe, it, expect, beforeAll, afterAll } from 'vitest'
 import { execa } from 'execa'
 import { formatter as mdcFormatter } from '../src/formatter'
 
 describe(`MDC Formatter`, async () => {
+  const tmpDir = join(__dirname, 'content/tmp')
+
   beforeAll(async () => {
-    await mkdir(join(__dirname, 'content/tmp'), { recursive: true })
+    await rm(tmpDir, { recursive: true, force: true })
+    await mkdir(tmpDir, { recursive: true })
   })
 
   afterAll(async () => {
-    await rmdir(join(__dirname, 'content/tmp'), { recursive: true })
+    await rm(tmpDir, { recursive: true, force: true })
   })
 
   const inputs = await readdir(join(__dirname, 'content/input'))
@@ -30,8 +33,9 @@ describe(`MDC Formatter`, async () => {
         return
       }
 
-      await writeFile(join(__dirname, 'content/tmp', input), formatted)
-      const error = await execa('npx', ['mdclint', join(__dirname, 'content/tmp', input)]).then(result => result.stdout).catch(error => error)
+      await mkdir(tmpDir, { recursive: true })
+      await writeFile(join(tmpDir, input), formatted)
+      const error = await execa('npx', ['mdclint', join(tmpDir, input)]).then(result => result.stdout).catch(error => error)
 
       const realError = String(error).split('\n')
         .filter(line => line.trim().length > 0 && !line.includes('failed with exit code 1'))
